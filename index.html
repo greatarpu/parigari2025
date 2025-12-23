@@ -206,9 +206,9 @@
             margin-top: 12px;
         }
 
-        @media (max-width: 576px) {
+       @media (max-width: 576px) {
             .rank-banner {
-                height: 180px;
+                height: 235px;
             }
 
             .topper-img {
@@ -219,6 +219,19 @@
             .rank-1 .topper-img {
                 width: 80px;
                 height: 80px;
+            }
+
+            .rank-banner::before {
+                content: "2025 TOPPERS";
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 2rem;
+                font-weight: 900;
+                color: rgba(255, 255, 255, 0.7);
+                letter-spacing: 10px;
+                white-space: nowrap;
             }
         }
     </style>
@@ -829,3 +842,4 @@
 </body>
 
 </html>
+
