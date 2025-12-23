@@ -31,9 +31,22 @@
         }
 
         .text-absent {
-            color: #e74c3c !important;
+            color: #bda6a4 !important;
             font-weight: 800;
             font-style: italic;
+        }
+
+        /* Clickable Name Styling */
+        #performanceTable tbody td:first-child {
+            color: #0d6efd;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        #performanceTable tbody td:first-child:hover {
+            color: #0a58ca;
+            text-decoration: underline;
         }
 
         .rank-cell {
@@ -51,18 +64,9 @@
             color: white;
         }
 
-        /* Fix for FixedColumns Background */
         th,
         td {
             white-space: nowrap;
-        }
-
-        .table-card .DTFC_LeftBodyLiner {
-            overflow-x: hidden;
-        }
-
-        .table> :not(caption)>*>* {
-            background-color: white;
         }
 
         .medal-icon {
@@ -73,7 +77,6 @@
             justify-content: center;
         }
 
-        /* Optional: Make the text of winners bold */
         .gold-text {
             color: #d4af37;
         }
@@ -85,17 +88,178 @@
         .bronze-text {
             color: #cd7f32;
         }
+
+        /* Rank Banner Styles */
+        .rank-banner {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            height: 280px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .rank-banner::before {
+            content: "2025 TOPPERS";
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 10px;
+            white-space: nowrap;
+        }
+
+        .topper-card {
+            text-align: center;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .rank-1 {
+            order: 2;
+            transform: translateY(-10px);
+        }
+
+        .rank-2 {
+            order: 1;
+        }
+
+        .rank-3 {
+            order: 3;
+        }
+
+        .topper-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            background: #eee;
+        }
+
+        .rank-1 .topper-img {
+            width: 100px;
+            height: 100px;
+            border-color: #fbbf24;
+        }
+
+        .medal-badge {
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .rank-1 .medal-badge {
+            background: #fbbf24;
+            color: #2c3e50;
+        }
+
+        .rank-2 .medal-badge {
+            background: #cbd5e1;
+            color: #2c3e50;
+        }
+
+        .rank-3 .medal-badge {
+            background: #d97706;
+        }
+
+        .topper-name {
+            color: white;
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        .topper-score {
+            color: #94a3b8;
+            font-size: 0.75rem;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+        }
+
+        table.table-bordered.dataTable th:first-child,
+        table.table-bordered.dataTable th:first-child,
+        table.table-bordered.dataTable td:first-child,
+        table.table-bordered.dataTable td:first-child {
+            border-left-width: 0px;
+        }
+
+        div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+            margin-top: 12px;
+        }
+
+        @media (max-width: 576px) {
+            .rank-banner {
+                height: 180px;
+            }
+
+            .topper-img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .rank-1 .topper-img {
+                width: 80px;
+                height: 80px;
+            }
+        }
     </style>
 </head>
 
 <body>
-
     <div class="container-fluid">
+        <div class="row">
+            <div class="rank-banner">
+                <div class="topper-card rank-2">
+                    <div class="avatar-wrapper">
+                        <img src="prema.png" class="topper-img" alt="Prema">
+                        <div class="medal-badge">2</div>
+                    </div>
+                    <div class="topper-name">Prema</div>
+                    <span class="topper-score">72.01% Avg</span>
+                </div>
+                <div class="topper-card rank-1">
+                    <div class="avatar-wrapper">
+                        <img src="jaba.png" class="topper-img" alt="Jabamary">
+                        <div class="medal-badge">1</div>
+                    </div>
+                    <div class="topper-name">Jabamary</div>
+                    <span class="topper-score">73.47% Avg</span>
+                </div>
+                <div class="topper-card rank-3">
+                    <div class="avatar-wrapper">
+                        <img src="lilly.png" class="topper-img" alt="Lilly">
+                        <div class="medal-badge">3</div>
+                    </div>
+                    <div class="topper-name">Lilly</div>
+                    <span class="topper-score">68.53% Avg</span>
+                </div>
+            </div>
+        </div>
+
         <div class="table-card">
             <div class="row d-flex justify-content-between align-items-center mb-4">
                 <div class="col-sm-12 col-md-6">
                     <h2 class="text-dark m-0">Parigari Bible Exam 2025</h2>
-                    <small class="text-muted">Ranks are only awarded to those who passed all months (>35%).</small>
+                    <small class="text-muted">Click a name to view the individual Progress Card.</small>
                 </div>
                 <div class="col-sm-12 col-md-6 text-end">
                     <span class="badge bg-danger">Fail/Absent: < 35%</span>
@@ -486,7 +650,63 @@
         </div>
     </div>
 
+    <div class="modal fade" id="progressModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="modalStudentName">Student Progress Card</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row text-center mb-3">
+                        <div class="col-6">
+                            <small class="text-muted d-block">Overall Rank</small>
+                            <h3 id="statRank" class="fw-bold text-primary">-</h3>
+                        </div>
+                        <div class="col-6">
+                            <small class="text-muted d-block">Attendance</small>
+                            <h3 id="statAttended" class="fw-bold text-dark">-</h3>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row text-center mb-4">
+                        <div class="col-6 text-success">
+                            <small class="text-dark d-block">Pass Months</small>
+                            <h4 id="statPass" class="fw-bold">0</h4>
+                        </div>
+                        <div class="col-6 text-danger">
+                            <small class="text-dark d-block">Fail/ABS Months</small>
+                            <h4 id="statFail" class="fw-bold">0</h4>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-light rounded text-center">
+                        <h6 class="mb-3 text-muted fw-bold">MONTHLY PODIUM FINISHES</h6>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="fs-4">🥇</div>
+                                <div id="statGold" class="fw-bold">0</div>
+                                <small class="text-muted">1st</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="fs-4">🥈</div>
+                                <div id="statSilver" class="fw-bold">0</div>
+                                <small class="text-muted">2nd</small>
+                            </div>
+                            <div class="col-4">
+                                <div class="fs-4">🥉</div>
+                                <div id="statBronze" class="fw-bold">0</div>
+                                <small class="text-muted">3rd</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js"></script>
@@ -495,7 +715,7 @@
         $(document).ready(function () {
             let passers = [];
 
-            // 1. FIRST PASS: Handle Absence, Failures, and prepare for Ranking
+            // 1. Initial Processing: Mark Fails/Absents
             $('#performanceTable tbody tr').each(function () {
                 let row = $(this);
                 let hasFailed = false;
@@ -506,8 +726,8 @@
                         let cellVal = $(this).text().trim();
                         let numVal = parseFloat(cellVal);
 
-                        if (cellVal === "0%" || cellVal === "0" || numVal === 0) {
-                            $(this).text("ABSENT").addClass("text-absent");
+                        if (cellVal === "0%" || numVal === 0) {
+                            $(this).text("ABS").addClass("text-absent");
                             hasFailed = true;
                         } else if (!isNaN(numVal) && numVal < 35) {
                             $(this).addClass("text-fail");
@@ -523,45 +743,34 @@
                 }
             });
 
-            // 2. RE-RANK THE PASSERS
+            // 2. Re-rank Passers
             passers.sort((a, b) => b.avg - a.avg);
             passers.forEach((item, index) => {
                 item.row.find('td:last').html(index + 1).attr('data-order', index + 1);
             });
 
-            // 3. MEDAL LOGIC: Add Medal Emojis per Month
+            // 3. Medal Logic
             for (let col = 1; col <= 12; col++) {
                 let marks = [];
-
-                // Collect all numeric marks for this column
                 $('#performanceTable tbody tr').each(function () {
                     let val = parseFloat($(this).find('td').eq(col).text());
-                    if (!isNaN(val) && val > 0) {
-                        marks.push(val);
-                    }
+                    if (!isNaN(val) && val > 0) marks.push(val);
                 });
 
-                // Get unique marks and sort descending
                 let uniqueSortedMarks = [...new Set(marks)].sort((a, b) => b - a);
 
-                // Append medals based on rank within that month
                 $('#performanceTable tbody tr').each(function () {
                     let cell = $(this).find('td').eq(col);
                     let val = parseFloat(cell.text());
-
                     if (val > 0) {
-                        if (val === uniqueSortedMarks[0]) {
-                            cell.append(' <span class="medal-icon" title="1st Place">🥇</span>').addClass('gold-text');
-                        } else if (val === uniqueSortedMarks[1]) {
-                            cell.append(' <span class="medal-icon" title="2nd Place">🥈</span>').addClass('silver-text');
-                        } else if (val === uniqueSortedMarks[2]) {
-                            cell.append(' <span class="medal-icon" title="3rd Place">🥉</span>').addClass('bronze-text');
-                        }
+                        if (val === uniqueSortedMarks[0]) cell.append(' <span class="medal-icon" title="1st Place">🥇</span>').addClass('gold-text');
+                        else if (val === uniqueSortedMarks[1]) cell.append(' <span class="medal-icon" title="2nd Place">🥈</span>').addClass('silver-text');
+                        else if (val === uniqueSortedMarks[2]) cell.append(' <span class="medal-icon" title="3rd Place">🥉</span>').addClass('bronze-text');
                     }
                 });
             }
 
-            // 4. INITIALIZE DATATABLE
+            // 4. Initialize DataTable
             $('#performanceTable').DataTable({
                 "scrollX": true,
                 "fixedColumns": { left: 1 },
@@ -569,9 +778,51 @@
                 "columnDefs": [
                     { "targets": "_all", "className": "dt-center" },
                     { "targets": 14, "type": "num" },
-                    { "targets": Array.from(Array(13).keys()), "orderable": false } // Disables 0-12
+                    { "targets": Array.from(Array(13).keys()), "orderable": false }
                 ],
                 "pageLength": 25
+            });
+
+            // 5. Modal Click Logic
+            $('#performanceTable tbody').on('click', 'td:first-child', function () {
+                let row = $(this).closest('tr');
+                let name = $(this).text();
+                let rank = row.find('td:last').text();
+
+                let attended = 0, pass = 0, fail = 0;
+                let gold = 0, silver = 0, bronze = 0;
+
+                row.find('td').each(function (index) {
+                    if (index >= 1 && index <= 12) {
+                        let cell = $(this);
+                        let text = cell.text();
+                        let val = parseFloat(text);
+
+                        if (text.includes("ABS")) {
+                            fail++;
+                        } else {
+                            attended++;
+                            if (val >= 35) pass++;
+                            else fail++;
+                        }
+
+                        if (cell.find('.medal-icon[title="1st Place"]').length) gold++;
+                        if (cell.find('.medal-icon[title="2nd Place"]').length) silver++;
+                        if (cell.find('.medal-icon[title="3rd Place"]').length) bronze++;
+                    }
+                });
+
+                $('#modalStudentName').text(name + "'s Progress Card");
+                $('#statRank').text(rank);
+                $('#statAttended').text(attended + "/12");
+                $('#statPass').text(pass);
+                $('#statFail').text(fail);
+                $('#statGold').text(gold);
+                $('#statSilver').text(silver);
+                $('#statBronze').text(bronze);
+
+                let myModal = new bootstrap.Modal(document.getElementById('progressModal'));
+                myModal.show();
             });
         });
     </script>
